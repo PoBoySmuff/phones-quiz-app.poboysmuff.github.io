@@ -1,0 +1,112 @@
+body * {
+    box-sizing: border-box;
+    color: white;
+}
+
+html { 
+    background: url(https://cdn.mos.cms.futurecdn.net/TJDYpZN3r8B7onh2imuNah.jpg)  no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*.question-and-score {
+    display: none;
+}*/
+
+main {
+    background-color: grey;
+    margin-top: 12%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    padding-top: 10px;
+}
+
+header {
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+form {
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*.intro-screen {
+    display:none;
+}*/
+
+p {
+    font-size: 16px;
+    padding-top: 40px;
+}
+
+#begin {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: green;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    padding: 10px;
+    width: 100px;
+}
+
+
+input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    width: 100%;
+}
+
+/*.question-form {
+    display: none;
+}*/
+
+#next-question {
+    background-color: green;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+    padding: 10px;
+}
+
+#reset-quiz {
+    background-color: green;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    width: 100px;
+    padding: 10px;
+}
+
+/*.result-screen {
+    text-align: center;
+    background-color: black;
+}*/ /*this class unnecessary due to already created form properties. will be deleted*/
+
+/*TODO:
+    Each button needs stop propogation and to create an event to render next question
+    First form change is easy. set start screen to display none and render questions
+    Each questions page needs to load next question from STORE - to be created in next part
+    Need to make the page look sexy. It's not sexy enough yet. Black and grey = not sexy.
+    Need to update question and score count with each correct/incorrect answer.
+    Accessability: currently fully navigatable with keyboard controls due to use of semantic HTML
+    Responsive design: Original design is made with phone users in mind. It currently does require
+    scrolling down, but will not be necessary once pages that user is not on are properly hidden 
+    (simple display:none) but I left all forms displayed for easier coding and review
+*/
