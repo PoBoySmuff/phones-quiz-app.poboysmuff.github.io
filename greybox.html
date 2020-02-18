@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App Greybox</title>
+
+    <link rel="stylesheet" type="text/css" href="greybox-styles.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Header with questions and score (hidden on intro screen)</h1>
+        </header>
+        <form class="intro-screen" action="/first-question">
+            <p>Intro screen</p>
+            <p>Introduce the quiz</p>
+            <br><br>
+            <button>Begin quiz</button>
+            
+        </form>
+        <form class="question-screen" action="/we-skip-this-anyway">
+            <header>
+                <p>Question: 1 Score: 0</p>
+            </header>
+            <fieldset class="question-list">
+                <legend class="question">Question</legend>
+                <input type="radio" name="question-answer" id="answer-1">
+                <label for="answer-1">answer 1</label>
+                <br>
+                <input type="radio" name="question-answer" id="answer-2">
+                <label for="answer-2">answer 2</label>
+                <br>
+                <input type="radio" name="question-answer" id="answer-3">
+                <label for="answer-3">answer 3</label>
+                <br>
+                <input type="radio" name="question-answer" id="answer-4">
+                <label for="answer-4">answer 4</label>
+                <br>
+                <button type="submit" id="next-question">Submit</button>
+                <p>Instant feedback - button text changes to Next Question</p>
+            </fieldset>
+        </form>
+        <form class="result-screen">
+            
+            <p class="results">Final Score</p>
+            <button type="button" id="reset-quiz">Reset quiz</button>
+        </form>
+
+    </main>
+</body>
+</html>
