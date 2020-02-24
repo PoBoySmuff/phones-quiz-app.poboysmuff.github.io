@@ -15,13 +15,19 @@
 
 */
 
-
+function startQuiz() {
+    $("#begin").on("click", function(event) {
+        $(".intro-screen").addClass("invisible");
+        $(".question-form").removeClass("invisible");
+        $(".question-and-score").removeClass("invisible");
+    });
+};
 
 function handleQuizApp() {
     startQuiz();
     handleQuestions();
     handleSelectOption();
-    restartQuizz();
+    restartQuiz();
 }
 
 $(handleQuizApp); //callback function
