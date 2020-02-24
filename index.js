@@ -1,6 +1,6 @@
 /*TODO
     create function stubs and handler (handleQuizApp)
-        startQuiz() when begin is pressed
+        startQuiz() when begin is pressed (renderAQuestion)
         handleQuestions() checks if at end of questions list - if not, render new question
         handleSelectOption() to verify answers
         restartQuiz() at the end, brings us back to beginning

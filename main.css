@@ -11,9 +11,10 @@ html {
     background-size: cover;
 }
 
-.question-and-score {
+.invisible {
     display: none;
 }
+
 
 main {
     background-color: grey;
@@ -43,9 +44,7 @@ form {
     padding: 30px;
 }
 
-/*.intro-screen {
-    display:none;
-}*/
+
 
 p {
     font-size: 16px;
@@ -72,9 +71,7 @@ label {
     width: 100%;
 }
 
-.question-form {
-    display: none;
-}
+
 
 #next-question {
     background-color: green;
@@ -96,9 +93,7 @@ label {
     padding-bottom: 20px;
 }
 
-.result-screen {
-    display: none;
- } 
+
 
 /*TODO:
     Each button needs stop propogation and to create an event to render next question

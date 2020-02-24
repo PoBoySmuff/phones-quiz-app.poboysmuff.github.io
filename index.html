@@ -11,7 +11,7 @@
     <main>
     <header>
         <h1>Welcome to my phone quiz!</h1>
-        <div class="question-and-score">Question: 1 <br/><br/> Score: 0</div>
+        <div class="question-and-score invisible">Question: 1 <br/><br/> Score: 0</div>
         <!-- need to hide on result screen and first screen -->
         <br>
     </header>
@@ -19,7 +19,7 @@
         <p>This quiz tests your knowledge of new technologies that have recently come to our smartphones.</p>
         <button type="button" id="begin">Begin!</button>
     </form> <!-- intro-screen to be hidden with js on button press -->
-    <form class="question-form" action="/next-question" method="post">
+    <form class="question-form invisible" action="/next-question" method="post">
         <fieldset class="question-list">
             <legend class="question">What is the first phone to innovate the selfie camera with a pop-up camera, 
                 elimitating the camera notch from the front screen?</legend>
@@ -39,7 +39,7 @@
         </fieldset>
         <!-- Need to create store for each question/answer -->
     </form>
-    <form class="result-screen">
+    <form class="result-screen invisible">
         <br><br>
         <p>Congratulations! Your final score is 0!</p>
         <button type="button" id="reset-quiz">Reset quiz</button>
