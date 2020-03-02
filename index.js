@@ -21,6 +21,7 @@ function renderQuestion() {
     $(".wrong-answer").addClass("invisible");
     $(".question-and-score").removeClass("invisible");
     $(".right-or-wrong").addClass("invisible");
+    
     if (STORE.currentQuestion >= STORE.questions.length) {
         finalScore();
     } else {
@@ -37,10 +38,27 @@ function renderQuestion() {
     $("#answer-4").val(answerList[3]);
     }
     $(".question-form").on("click","#next-question", function(event) {
-        event.preventDefault();
         event.stopPropagation();
+        event.preventDefault();
+        console.log("am i here twice");
+        
+        
         verifyQuestion();
-    })
+        nextQuestion();
+        
+    });
+    
+}
+
+function nextQuestion() {
+    STORE.currentQuestion++;
+    $(".right-or-wrong").on("click", "#next-2", function(event) {
+        event.stopPropagation();
+        event.preventDefault();
+        
+        renderQuestion();
+        
+    });
 }
 
 function verifyQuestion() {
@@ -50,34 +68,41 @@ function verifyQuestion() {
         //throw error
     }*/
     //let radioAnswer = $(""
-    if (radioChecked === correctAnswer) {
+    console.log(radioChecked);
+    if (radioChecked.toString() === correctAnswer) {
         STORE.score++;
-        updateScore();
+        
         rightAnswer(); 
+        console.log("hi");
         
     } else {
-        updateScore();
+        
         wrongAnswer();
+        console.log("hi-wrong");
         
     } 
+    updateScore();
+    return;
     
     //right/wrong answer hides the form and adds a page with the result
     
     //console.log(STORE.currentQuestion);
-    $("#next-2").on("click", function(event) {
+    /*$(".right-or-wrong").on("click", "#next-2", function(event) {
+        event.stopPropagation();
         event.preventDefault();
         event.stopPropagation();
         
         renderQuestion();
         
-    })
+    });*/
 }
 
 function updateScore() {
     $(".new-score").html(`New Score: ${STORE.score}`);
     $(".question-and-score").html(`Question: ${STORE.currentQuestion+1}
-        <br/><br/> Score: ${STORE.score}`);
-    STORE.currentQuestion++;
+    <br/><br/> Score: ${STORE.score}`);
+    console.log("here again");
+        //STORE.currentQuestion++;
 }
 
 function rightAnswer() {
