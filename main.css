@@ -81,6 +81,16 @@ label {
     padding: 10px;
 }
 
+#next-2 {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: green;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    padding: 10px;
+    width: 100px;
+}
+
 #reset-quiz {
     background-color: green;
     margin-top: 100px;

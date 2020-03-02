@@ -11,7 +11,7 @@
     <main>
     <header>
         <h1>Welcome to my phone quiz!</h1>
-        <div class="question-and-score invisible">Question: 1 <br/><br/> Score: 0</div>
+        <div class="question-and-score invisible">Question: ${currentQuestion} <br/><br/> Score: 0</div>
         <!-- need to hide on result screen and first screen -->
         <br>
     </header>
@@ -23,22 +23,35 @@
         <fieldset class="question-list">
             <legend class="question">What is the first phone to innovate the selfie camera with a pop-up camera, 
                 elimitating the camera notch from the front screen?</legend>
-            <input type="radio" name="question-answer" id="answer-1">
-            <label for="answer-1">answer 1</label>
+            <input type="radio" name="question-answer" id="answer-1" value="#answer-1">
+            <label for="answer-1" id = "answer-1-label">answer 1</label>
             <br>
-            <input type="radio" name="question-answer" id="answer-2">
-            <label for="answer-2">answer 2</label>
+            <input type="radio" name="question-answer" id="answer-2" value="#answer-2">
+            <label for="answer-2" id="answer-2-label">answer 2</label>
             <br>
-            <input type="radio" name="question-answer" id="answer-3">
-            <label for="answer-3">answer 3</label>
+            <input type="radio" name="question-answer" id="answer-3" value="#answer-3">
+            <label for="answer-3" id ="answer-3-label">answer 3</label>
             <br>
-            <input type="radio" name="question-answer" id="answer-4">
-            <label for="answer-4">answer 4</label>
+            <input type="radio" name="question-answer" id="answer-4" value="#answer-4">
+            <label for="answer-4" id = "answer-4-label">answer 4</label>
             <br>
+
             <button type="submit" id="next-question">Submit</button>
         </fieldset>
         <!-- Need to create store for each question/answer -->
     </form>
+
+    <form class="right-or-wrong invisible" action="/right-or-wrong" method="post">
+    <div class="right-answer invisible">
+        <h2>You got it right!</h2>
+        <span class="new-score">New Score: 0</span>
+    </div>
+    <div class="wrong-answer invisible">
+        <h2>Wrong answer :(</h2>
+        <span class="new-score">New Score: 0</span>
+    </div>
+    <button type="submit" id="next-2">Next Question</button>
+    </form> 
     <form class="result-screen invisible">
         <br><br>
         <p>Congratulations! Your final score is 0!</p>

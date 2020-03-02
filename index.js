@@ -15,11 +15,97 @@
 
 */
 
+function renderQuestion() {
+    $(".question-form").removeClass("invisible");
+    $(".right-answer").addClass("invisible");
+    $(".wrong-answer").addClass("invisible");
+    $(".question-and-score").removeClass("invisible");
+    $(".right-or-wrong").addClass("invisible");
+    if (STORE.currentQuestion >= STORE.questions.length) {
+        finalScore();
+    } else {
+    let question = STORE.questions[STORE.currentQuestion].question;
+    $(".question").text(question);
+    let answerList = STORE.questions[STORE.currentQuestion].options;
+    $("#answer-1-label").text(answerList[0]);
+    $("#answer-1").val(answerList[0]);
+    $("#answer-2-label").text(answerList[1]);
+    $("#answer-2").val(answerList[1]);
+    $("#answer-3-label").text(answerList[2]);
+    $("#answer-3").val(answerList[2]);
+    $("#answer-4-label").text(answerList[3]);
+    $("#answer-4").val(answerList[3]);
+    }
+    $(".question-form").on("click","#next-question", function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        verifyQuestion();
+    })
+}
+
+function verifyQuestion() {
+    let correctAnswer = STORE.questions[STORE.currentQuestion].answer;
+    let radioChecked = $("input[name='question-answer']:checked").val();
+    /*if (!radioChecked) {
+        //throw error
+    }*/
+    //let radioAnswer = $(""
+    if (radioChecked === correctAnswer) {
+        STORE.score++;
+        updateScore();
+        rightAnswer(); 
+        
+    } else {
+        updateScore();
+        wrongAnswer();
+        
+    } 
+    
+    //right/wrong answer hides the form and adds a page with the result
+    
+    //console.log(STORE.currentQuestion);
+    $("#next-2").on("click", function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        renderQuestion();
+        
+    })
+}
+
+function updateScore() {
+    $(".new-score").html(`New Score: ${STORE.score}`);
+    $(".question-and-score").html(`Question: ${STORE.currentQuestion+1}
+        <br/><br/> Score: ${STORE.score}`);
+    STORE.currentQuestion++;
+}
+
+function rightAnswer() {
+    //$(".question-form").addClass("invisible");
+    $(".question-form").addClass("invisible");
+    $(".right-answer").removeClass("invisible");
+    $(".right-or-wrong").removeClass("invisible");
+    $(".question-and-score").addClass("invisible");
+    
+
+}
+
+function wrongAnswer() {
+    $(".question-form").addClass("invisible");
+    $(".right-or-wrong").removeClass("invisible");
+    $(".wrong-answer").removeClass("invisible");
+    $(".question-and-score").addClass("invisible");
+    
+}
+
 function startQuiz() {
     $("#begin").on("click", function(event) {
         $(".intro-screen").addClass("invisible");
         $(".question-form").removeClass("invisible");
+        $(".question-and-score").html(`Question: ${STORE.currentQuestion+1}
+        <br/><br/> Score: ${STORE.score}`);
         $(".question-and-score").removeClass("invisible");
+        renderQuestion();
     });
 };
 
